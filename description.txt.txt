@@ -1,0 +1,101 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows                                                                                                                                                                   PS C:\WINDOWS\system32> Get-ExecutionPolicy                                         Restricted                                                                          PS C:\WINDOWS\system32> Set-ExecutionPolicy Bypass -Scope Process
+Execution Policy Change
+The execution policy helps protect you from scripts that you do not trust. Changing
+ the execution policy might expose you to the security risks described in the
+about_Execution_Policies help topic at
+https:/go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution
+policy?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help
+(default is "N"):y
+PS C:\WINDOWS\system32> Get-ExecutionPolicy
+Bypass
+PS C:\WINDOWS\system32> Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+Forcing web requests to allow TLS v1.2 (Required for requests to Chocolatey.org)
+Getting latest version of the Chocolatey package for download.
+Not using proxy.
+Getting Chocolatey from https://community.chocolatey.org/api/v2/package/chocolatey/2.2.2.
+Downloading https://community.chocolatey.org/api/v2/package/chocolatey/2.2.2 to C:\Users\ADMINI~2\AppData\Local\Temp\chocolatey\chocoInstall\chocolatey.zip
+Not using proxy.
+Extracting C:\Users\ADMINI~2\AppData\Local\Temp\chocolatey\chocoInstall\chocolatey.zip to C:\Users\ADMINI~2\AppData\Local\Temp\chocolatey\chocoInstall
+Installing Chocolatey on the local machine
+Creating ChocolateyInstall as an environment variable (targeting 'Machine')
+  Setting ChocolateyInstall to 'C:\ProgramData\chocolatey'
+WARNING: It's very likely you will need to close and reopen your shell
+  before you can use choco.
+Restricting write permissions to Administrators
+We are setting up the Chocolatey package repository.
+The packages themselves go to 'C:\ProgramData\chocolatey\lib'
+  (i.e. C:\ProgramData\chocolatey\lib\yourPackageName).
+A shim file for the command line goes to 'C:\ProgramData\chocolatey\bin'
+  and points to an executable in 'C:\ProgramData\chocolatey\lib\yourPackageName'.
+
+Creating Chocolatey folders if they do not already exist.
+
+chocolatey.nupkg file not installed in lib.
+ Attempting to locate it from bootstrapper.
+PATH environment variable does not have C:\ProgramData\chocolatey\bin in it. Adding...
+WARNING: Not setting tab completion: Profile file does not exist at
+'C:\Users\Administrator\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps
+1'.
+Chocolatey (choco.exe) is now ready.
+You can call choco from anywhere, command line or powershell by typing choco.
+Run choco /? for a list of functions.
+You may need to shut down and restart powershell and/or consoles
+ first prior to using choco.
+Ensuring Chocolatey commands are on the path
+Ensuring chocolatey.nupkg is in the lib folder
+PS C:\WINDOWS\system32> choco
+Chocolatey v2.2.2
+Please run 'choco -?' or 'choco <command> -?' for help menu.
+PS C:\WINDOWS\system32> choco install -y nodejs-lts microsoft-openjdk11
+Chocolatey v2.2.2
+3 validations performed. 2 success(es), 1 warning(s), and 0 error(s).
+
+Validation Warnings:
+ - A pending system reboot request has been detected, however, this is
+   being ignored due to the current Chocolatey configuration.  If you
+   want to halt when this occurs, then either set the global feature
+   using:
+     choco feature enable --name="exitOnRebootDetected"
+   or pass the option --exit-when-reboot-detected.
+
+Installing the following packages:
+nodejs-lts;microsoft-openjdk11
+By installing, you accept licenses for the packages.
+Progress: Downloading nodejs-lts 18.17.1... 100%
+
+nodejs-lts v18.17.1 [Approved]
+nodejs-lts package files install completed. Performing other installation steps.
+Installing 64 bit version
+Installing nodejs-lts...
+nodejs-lts has been installed.
+  nodejs-lts may be able to be automatically uninstalled.
+Environment Vars (like PATH) have changed. Close/reopen your shell to
+ see the changes (or in powershell/cmd.exe just type `refreshenv`).
+ The install of nodejs-lts was successful.
+  Software installed as 'MSI', install location is likely default.
+Progress: Downloading microsoft-openjdk11 11.0.20... 100%
+
+microsoft-openjdk11 v11.0.20 [Approved]
+microsoft-openjdk11 package files install completed. Performing other installation steps.
+Using system proxy server 'ep.threatpulse.net'.
+Downloading microsoft-openjdk11 64 bit
+  from 'https://aka.ms/download-jdk/microsoft-jdk-11.0.20-windows-x64.msi'
+Using system proxy server 'ep.threatpulse.net'.
+Progress: 100% - Completed download of C:\Users\Administrator\AppData\Local\Temp\chocolatey\microsoft-openjdk11\11.0.20\microsoft-jdk-11.0.20-windows-x64.msi (161.35 MB).
+Download of microsoft-jdk-11.0.20-windows-x64.msi (161.35 MB) completed.
+Hashes match.
+Installing microsoft-openjdk11...
+microsoft-openjdk11 has been installed.
+  microsoft-openjdk11 may be able to be automatically uninstalled.
+Environment Vars (like PATH) have changed. Close/reopen your shell to
+ see the changes (or in powershell/cmd.exe just type `refreshenv`).
+ The install of microsoft-openjdk11 was successful.
+  Software installed to 'C:\Program Files\Microsoft\jdk-11.0.20.8-hotspot\'
+
+Chocolatey installed 2/2 packages.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+PS C:\WINDOWS\system32>
