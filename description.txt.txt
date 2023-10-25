@@ -1,4 +1,4 @@
-Windows PowerShell
+Windows PowerShell Just for remember the command
 Copyright (C) Microsoft Corporation. All rights reserved.
 
 Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows                                                                                                                                                                   PS C:\WINDOWS\system32> Get-ExecutionPolicy                                         Restricted                                                                          PS C:\WINDOWS\system32> Set-ExecutionPolicy Bypass -Scope Process
