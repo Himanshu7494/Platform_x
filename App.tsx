@@ -12,7 +12,7 @@ function App() {
     axios
       .get('https://api.twitter.com/1.1/statuses/user_timeline.json', {
         params: {
-          screen_name: 'Himansh19851821', // Replace with the Twitter username you want to fetch tweets from
+          screen_name: '1716730993867128832Himansh1985', // Replace with the Twitter username you want to fetch tweets from
           count: 1, // Number of tweets to fetch
         },
         headers: {
